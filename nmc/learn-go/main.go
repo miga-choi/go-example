@@ -13,12 +13,24 @@ func multiply(a, b int) int {
 	return a * b
 }
 
-func lenAndUpper(name string) (int, string) {
+func lenAndUpper1(name string) (int, string) {
 	return len(name), strings.ToUpper(name)
 }
 
 func repeatMe(words ...string) {
 	fmt.Println(words)
+}
+
+func lenAndUpper2(name string) (length int, uppercase string) {
+	length = len(name)
+	uppercase = strings.ToUpper(name)
+	return
+}
+
+func lenAndUpper3(name string) (length int, uppercase string) {
+	defer fmt.Println("I'm done")
+	length, uppercase = len(name), strings.ToUpper(name)
+	return
 }
 
 func main() {
@@ -46,13 +58,21 @@ func main() {
 	fmt.Println(multiply(2, 2))
 
 	// function returns 2 value
-	totalLength1, upperName1 := lenAndUpper("ian")
+	totalLength1, upperName1 := lenAndUpper1("ian")
 	fmt.Println(totalLength1, upperName1)
 
 	// "_" will ignore returned value
-	totalLength2, _ := lenAndUpper("choi")
+	totalLength2, _ := lenAndUpper1("choi")
 	fmt.Println(totalLength2)
 
 	// function with multiple arguments
 	repeatMe("hello", "world", "ian", "choi")
+
+	// declare return value as variables
+	totalLength3, upperName3 := lenAndUpper2("ian choi")
+	fmt.Println(totalLength3, upperName3)
+
+	// defer
+	totalLength4, upperName4 := lenAndUpper3("hello ian choi")
+	fmt.Println(totalLength4, upperName4)
 }
