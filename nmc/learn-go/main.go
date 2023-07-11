@@ -49,6 +49,21 @@ func adds2(numbers ...int) (result int) {
 	return
 }
 
+func checkNumber1(num int) bool {
+	if num < 18 {
+		return false
+	} else {
+		return true
+	}
+}
+
+func checkNumber2(num int) bool {
+	if newNum := num + 2; newNum < 18 {
+		return false
+	}
+	return true
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 
@@ -92,7 +107,11 @@ func main() {
 	totalLength4, upperName4 := lenAndUpper3("hello ian choi")
 	fmt.Println(totalLength4, upperName4)
 
-	// for loop
+	// Loop - for
 	fmt.Println(adds1(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 	fmt.Println(adds2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
+
+	// Conditional Statement - if
+	fmt.Println(checkNumber1(17))
+	fmt.Println(checkNumber2(17))
 }
