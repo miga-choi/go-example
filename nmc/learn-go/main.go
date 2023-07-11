@@ -33,6 +33,22 @@ func lenAndUpper3(name string) (length int, uppercase string) {
 	return
 }
 
+func adds1(numbers ...int) int {
+	result := 0
+	for i := 0; i < len(numbers); i++ {
+		result += numbers[i]
+	}
+	return result
+}
+
+func adds2(numbers ...int) (result int) {
+	// for index, value := range [] {}
+	for _, number := range numbers {
+		result += number
+	}
+	return
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 
@@ -75,4 +91,8 @@ func main() {
 	// defer
 	totalLength4, upperName4 := lenAndUpper3("hello ian choi")
 	fmt.Println(totalLength4, upperName4)
+
+	// for loop
+	fmt.Println(adds1(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+	fmt.Println(adds2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
 }
