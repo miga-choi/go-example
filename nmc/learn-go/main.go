@@ -64,6 +64,28 @@ func checkNumber2(num int) bool {
 	return true
 }
 
+func checkNumber3(num int) bool {
+	switch {
+	case num == 18:
+		return true
+	case num > 18:
+		return true
+	default:
+		return false
+	}
+}
+
+func checkNumber4(num int) bool {
+	switch newNum := num + 2; newNum {
+	case 17:
+		return false
+	case 19:
+		return true
+	default:
+		return false
+	}
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 
@@ -114,4 +136,8 @@ func main() {
 	// Conditional Statement - if
 	fmt.Println(checkNumber1(17))
 	fmt.Println(checkNumber2(17))
+
+	// switch
+	fmt.Println(checkNumber3(17))
+	fmt.Println(checkNumber4(17))
 }
