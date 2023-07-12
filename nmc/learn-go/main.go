@@ -146,6 +146,27 @@ func maps() {
 	}
 }
 
+func structs() {
+	type personStruct struct {
+		name     string
+		age      int
+		favWords []string
+	}
+
+	// person := personStruct{
+	// 	name:     "person",
+	// 	age:      30,
+	// 	favWords: []string{"hello", "world"},
+	// }
+	person := personStruct{
+		"person",
+		30,
+		[]string{"hello", "world"},
+	}
+
+	fmt.Println(person)
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 
@@ -229,4 +250,9 @@ func main() {
 	fmt.Println("maps ============> start")
 	maps()
 	fmt.Println("maps ============> end")
+
+	// structs
+	fmt.Println("structs ============> start")
+	structs()
+	fmt.Println("structs ============> end")
 }
