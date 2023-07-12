@@ -86,16 +86,52 @@ func checkNumber4(num int) bool {
 	}
 }
 
+// pointer
+func pointer() {
+	a1 := 2             // a1 => value 2
+	b1 := a1            // b1 => value 2
+	fmt.Println(a1, b1) // 2, 2
+	a1 = 10             // a1 => 10
+	fmt.Println(a1, b1) // 10, 2
+
+	//  & => get variable's "point"
+	a2 := 2               // a2 => value 2
+	b2 := 10              // b2 => value 10
+	fmt.Println(&a2, &b2) // 0x140000180f8, 0x14000018110
+	a3 := 2               // a3 => value 2
+	b3 := &a3             // b3 => a3's point
+	fmt.Println(&a3, b3)  // 0x14000018118, 0x14000018118
+
+	// * => get pointer's "value"
+	a4 := 2              // a4 => value 2
+	b4 := &a4            // b4 => a4's point
+	fmt.Println(a4, *b4) // 2, 2 => *b4 = b4's (a4's) value
+
+	a5 := 2              // a5 => value 2
+	b5 := &a5            // b5 => a5's value
+	fmt.Println(a5, *b5) // 2, 2
+	a5 = 10              // change a5's value => b5's value also changed
+	fmt.Println(a5, *b5) // 5, 5 => b5 changed to value 5
+
+	a6 := 2              // a6 => value 2
+	b6 := &a6            // b6 => a6's point
+	*b6 = 10             // change b6's value => a6's value also changed
+	fmt.Println(a6, *b6) // 10, 10
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 
 	// constants
+	fmt.Println("constants ============> start")
 	const const1 = "const1"
 	fmt.Println(const1)
 	const const2 string = "const2"
 	fmt.Println(const2)
+	fmt.Println("constants ============> end")
 
 	// variables
+	fmt.Println("variables ============> start")
 	var1 := "var1"
 	fmt.Println(var1)
 	var1 = "changedVar1"
@@ -105,8 +141,10 @@ func main() {
 	fmt.Println(var2)
 	var2 = "changedVar2"
 	fmt.Println(var2)
+	fmt.Println("variables ============> end")
 
 	// functions
+	fmt.Println("functions ============> start")
 	fmt.Println(plus(2, 2))
 	fmt.Println(multiply(2, 2))
 
@@ -124,20 +162,34 @@ func main() {
 	// declare return value as variables
 	totalLength3, upperName3 := lenAndUpper2("ian choi")
 	fmt.Println(totalLength3, upperName3)
+	fmt.Println("functions ============> end")
 
 	// defer
+	fmt.Println("defer ============> start")
 	totalLength4, upperName4 := lenAndUpper3("hello ian choi")
 	fmt.Println(totalLength4, upperName4)
+	fmt.Println("defer ============> end")
 
 	// Loop - for
+	fmt.Println("for ============> start")
 	fmt.Println(adds1(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 	fmt.Println(adds2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
+	fmt.Println("for ============> end")
 
 	// Conditional Statement - if
+	fmt.Println("if ============> start")
 	fmt.Println(checkNumber1(17))
 	fmt.Println(checkNumber2(17))
+	fmt.Println("if ============> end")
 
 	// switch
+	fmt.Println("switch ============> start")
 	fmt.Println(checkNumber3(17))
 	fmt.Println(checkNumber4(17))
+	fmt.Println("switch ============> end")
+
+	// pointer
+	fmt.Println("pointer ============>")
+	pointer()
+	fmt.Println("pointer ============> end")
 }
