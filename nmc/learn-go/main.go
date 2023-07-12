@@ -137,6 +137,15 @@ func arraysAndSlices() {
 	fmt.Println(array2)
 }
 
+func maps() {
+	maps := map[string]string{"first": "hello", "second": "world"}
+	fmt.Println(maps)
+
+	for key, value := range maps {
+		fmt.Println(key, value)
+	}
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 
@@ -211,8 +220,13 @@ func main() {
 	pointer()
 	fmt.Println("pointer ============> end")
 
-	// Arrays and slices
+	// arrays & slices
 	fmt.Println("arrays and slices ============> start")
 	arraysAndSlices()
 	fmt.Println("arrays and slices ============> end")
+
+	// maps
+	fmt.Println("maps ============> start")
+	maps()
+	fmt.Println("maps ============> end")
 }
