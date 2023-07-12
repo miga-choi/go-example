@@ -119,6 +119,24 @@ func pointer() {
 	fmt.Println(a6, *b6) // 10, 10
 }
 
+func arraysAndSlices() {
+	// static array (array)
+	array1 := [5]string{"hello", "world"}
+	fmt.Println(array1)
+
+	array1[1] = ","
+	array1[2] = "_"
+	array1[3] = "world"
+	array1[4] = "!"
+	// array1[5] = "" => invalid argument: index 5 out of bounds [0:5]
+	fmt.Println(array1)
+
+	// dynamic array (slice)
+	array2 := []string{"hello"}
+	array2 = append(array2, ",", "_", "world", "!")
+	fmt.Println(array2)
+}
+
 func main() {
 	fmt.Println("Hello, World!")
 
@@ -189,7 +207,12 @@ func main() {
 	fmt.Println("switch ============> end")
 
 	// pointer
-	fmt.Println("pointer ============>")
+	fmt.Println("pointer ============> start")
 	pointer()
 	fmt.Println("pointer ============> end")
+
+	// Arrays and slices
+	fmt.Println("arrays and slices ============> start")
+	arraysAndSlices()
+	fmt.Println("arrays and slices ============> end")
 }
